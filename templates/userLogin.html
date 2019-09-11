@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Simple Cloud Auth Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-3">Simple Cloud Auth Server</h1>
+      </div>
+      <h3>User Login</h3>
+      <br>
+      <form name="loginForm" method="POST">
+        <p>Enter username <input type='text' name="username" onChange="validate()"> </p>
+        <p>Enter password <input type='password' name="password" onChange="validate()"> </p>
+        <input type="submit" class="btn btn-primary" value="Login" id="formSubmit" disabled="true" title="Make sure you have filled input fields">
+        <!-- make sure new pass is 8 char long -->
+      </form>
+      <br><br><br>
+      <p>Click <a href="/">here</a> to go home.</p>
+    </div>
+    <script>
+    function validate() {
+      console.log("ding")
+      let u = document.forms["loginForm"]["username"].value;
+      let p = document.forms["loginForm"]["password"].value;
+      if (u == "" || p == "") {
+        document.getElementById("formSubmit").disabled = true;
+      }
+      else {
+        document.getElementById("formSubmit").disabled = false;
+      }
+    }
+    </script>
+  </body>
+</html>
